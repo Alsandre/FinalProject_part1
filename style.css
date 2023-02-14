@@ -1,0 +1,267 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* Button reset */
+button {
+  display: inline-block;
+  border: none;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  background: transparent;
+  color: #ffffff;
+  font-family: sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out, transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+button:hover,
+button:focus {
+  background: transparent;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* button:active {
+    transform: scale(0.99);
+} */
+
+body {
+  padding: 0;
+  background-color: #5f6472;
+}
+
+.header-container {
+  width: 95%;
+  margin: auto;
+  display: flex;
+  background-color: #5f6472;
+  justify-content: space-between;
+}
+.logo {
+  position: fixed;
+  left: 20px;
+  top: 20px;
+}
+.burger {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+}
+
+.open {
+  display: block;
+}
+.close {
+  display: none;
+  /* visibility: hidden; */
+}
+
+.search-bar {
+  /* width: 95%; */
+  margin: 80px 20px 30px 20px;
+  position: relative;
+}
+.search-bar input {
+  border: none;
+  width: 100%;
+  height: 40px;
+  padding: 0.5em 1rem;
+  border-radius: 10px;
+}
+.search-bar input:active,
+.search-bar input:hover {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+.search-input-placeholder {
+  position: absolute;
+  left: 15px;
+  top: 10px;
+}
+.search-input-placeholder img {
+  width: 20px;
+}
+#input-cover {
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  height: 40px;
+  padding: 0.5em 1rem;
+  border-radius: 10px;
+  background-color: red;
+}
+
+.search-input-placeholder::after {
+  content: "Search";
+  position: absolute;
+  font-family: "Roboto", sans-serif;
+  line-height: 24px;
+  font-size: 16px;
+  left: 38px;
+}
+
+.main-layout {
+  /* width: 95%; */
+  margin: 30px 20px auto 20px;
+  height: 77vh;
+  min-height: 633px;
+}
+
+.shipment-info {
+  /* display: none; */
+
+  /* border: 1px solid yellow; */
+  font-family: "Roboto", sans-serif;
+  padding: 20px 15px;
+  border-radius: 20px;
+  background: linear-gradient(124.01deg, #2d3038 0%, rgba(45, 48, 56, 0) 100%);
+}
+.shipment-info h2 {
+  color: white;
+  font-weight: 400;
+  line-height: 38px;
+}
+#shipment-contact {
+  color: #979797;
+  line-height: 24px;
+}
+.cargo-boxes {
+  margin: 30px auto 10px 0;
+  color: #979797;
+}
+.display-boxes {
+  border: none;
+  width: 100%;
+  border-radius: 10px;
+  height: 40px;
+  padding: 10.4px 19px;
+  margin-bottom: 50px;
+  cursor: text;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+.display-boxes:active,
+.display-boxes:focus {
+  border: none;
+}
+
+.cargo-bays {
+  color: #979797;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+#shipment-bays {
+  text-align: center;
+  line-height: 44px;
+  font-size: 34px;
+  color: white;
+}
+
+.shipment-list-container {
+  margin-top: 30px;
+  display: none;
+  color: #979797;
+  background-color: #5f6472;
+}
+.shipment-header {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 38px;
+  margin: 8px 0;
+  margin-block-start: 0;
+}
+.shipment-list {
+  list-style: none;
+  /* border: 1px solid yellow; */
+  height: 100%;
+}
+.shipment-list li {
+  margin: 8px 0;
+  border-radius: 10px;
+  height: 30px;
+  line-height: 30px;
+}
+.shipment-list li a {
+  font-family: "Roboto", sans-serif;
+  color: inherit;
+  text-decoration: none;
+}
+.shipment-list li a:active,
+.shipment-list li a:focus-within {
+  outline: none;
+  border: none;
+  color: white;
+}
+.shipment-list li:active,
+.shipment-list li:focus {
+  outline: none;
+  border: none;
+  color: white;
+}
+
+.shipment-info {
+}
+
+@media (min-width: 481px) {
+  .logo {
+    top: 27px;
+    left: 40px;
+  }
+  .burger {
+    display: none;
+  }
+  .search-bar {
+    display: none;
+  }
+  .shipment-list-container {
+    display: inline-block;
+    /* margin-top: 66px; */
+    /* margin-left: 40px; */
+    width: 270px;
+    margin: 0;
+  }
+  .shipment-info {
+    display: inline-block;
+    /* margin-top: 122px;
+    margin-left: 50px; */
+    min-width: 600px;
+    margin: 0;
+    padding: 51px;
+  }
+  .shipment-info h2 {
+    line-height: 74px;
+    font-size: 64px;
+  }
+  .display-boxes {
+    width: 320px;
+  }
+  .cargo-bays {
+    text-align: left;
+    font-size: 34px;
+  }
+  #shipment-bays {
+    font-size: 56px;
+    text-align: left;
+  }
+  .main-container {
+    margin: 122px 44px auto 40px;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 270px 1fr;
+    gap: 50px;
+  }
+}

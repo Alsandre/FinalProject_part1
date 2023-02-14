@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="index.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="logo"><img src="/assets/logo.svg" alt="" /></div>
+        <button id="burger-button" onclick="burgerSH()" class="burger">
+          <img
+            id="burger-lines"
+            class="open"
+            src="/assets/burger-lines.svg"
+            alt="burger-lines"
+          />
+          <img
+            id="burger-cross"
+            class="close"
+            src="/assets/burger-cross.svg"
+            alt="burger-cross"
+          />
+        </button>
+      </div>
+    </header>
+    <section class="search-bar" id="search-bar">
+      <input
+        type="text"
+        id="search"
+        onfocus="mobileSearch()"
+        onblur="mobileSearchOut()"
+      />
+      <span class="search-input-placeholder" id="search-placeholder"
+        ><img src="/assets/search-magnifier.svg" alt="search-magnifier"
+      /></span>
+      <span id="input-cover"></span>
+    </section>
+    <main class="main-container">
+        <div class="main-layout shipment-list-container" id="list-of-shipments">
+          <h1 class="shipment-header">SHIPMENT LIST</h1>
+          <ul class="shipment-list" id="shipment-list"></ul>
+        </div>
+        <div class="main-layout shipment-info" id="information-of-shipment">
+            <h2 id="shipment-header">Amazon</h2>
+            <a id="shipment-contact">contact@amazon.com</a>
+            <div class="cargo-boxes">CARGO BOXES</div>
+            <input class='display-boxes' id="shipment-boxes" />
+            <div class="cargo-bays">Number of required cargo bays</div>
+            <div id="shipment-bays">5</div>
+        </div>
+    </main>
+  </body>
+</html>
