@@ -4,6 +4,13 @@ const shipmentsArray = [];
 let isBurgerOpen = false;
 
 let cargoBays = $('shipment-bays');
+let searchField = $('search');
+
+searchField.addEventListener('input', (e) => {
+  
+  let searchResult = shipmentsArray.filter(el => el.name.includes(el.target.value))
+  populateShipmentList(searchResult);
+})
 
 
 let shipmentBoxes = $('shipment-boxes');
@@ -31,7 +38,10 @@ const mobileSearch = () => {
   $("search-placeholder").style.display = "none";
   $("input-cover").style.display = "none";
 };
-const mobileSearchOut = () => {
+const mobileSearchOut = (e) => {
+  if(e.target.value !== ''){
+    $('search-placeholder').style.display = 'none'
+  }
   $("search-placeholder").style.display = "block";
   $("input-cover").style.display = "block";
 };
@@ -56,6 +66,7 @@ function swap(id1, id2) {
   $(id2).style.display = "block";
   if(id1 === 'burger-lines'){
     $('list-of-shipments').style.display = 'block';
+    $('list-of-shipments').style.marginTop = '80px';
     $('search-bar').style.display = 'none';
     $('information-of-shipment').style.display = 'none';
   }else if(id1 === "burger-cross"){
@@ -66,6 +77,11 @@ function swap(id1, id2) {
 }
 
 function populateShipmentList(arr){
+  const shipmentList = $('shipment-list');
+  if(shipmentList.innerText !== ''){
+    shipmentList.innerText = '';
+  }
+  // shipmentList.innerText = '';
     arr.forEach((element) => {
         let target = $('shipment-boxes');
         target.addEventListener('input', (e) => {
@@ -93,7 +109,7 @@ function populateShipmentList(arr){
         })
         shipmentLi.id = element.id;
         shipmentLi.appendChild(shipmentA);
-        $('shipment-list').appendChild(shipmentLi);
+        shipmentList.appendChild(shipmentLi);
         // console.log(shipmentLi.id)
     });
 }
