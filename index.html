@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <script defer src="index.js"></script>
+    <script type="module" defer src="index.js"></script>
     <title>Document</title>
   </head>
   <body>
@@ -75,7 +75,7 @@
             </defs>
           </svg>
         </div>
-        <button id="burger-button" onclick="burgerSH()" class="burger">
+        <button id="burger-button" class="burger">
           <!-- <img
             id="burger-lines"
             class="open"
@@ -135,8 +135,6 @@
       <input
         type="text"
         id="search"
-        onfocus="mobileSearch()"
-        onblur="mobileSearchOut()"
       />
       <span class="search-input-placeholder" id="search-placeholder"
         ><!--<img
