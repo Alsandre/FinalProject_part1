@@ -181,19 +181,42 @@ body {
   font-weight: 400;
   font-size: 20px;
   line-height: 38px;
-  margin: 8px 0;
+  margin: 5px 0;
   margin-block-start: 0;
 }
 .shipment-list {
   list-style: none;
   /* border: 1px solid yellow; */
-  height: 100%;
+  overflow: hidden;
+  height: 77vh;
+  padding-left: 2px;
+  padding-right: 10px;
+  border-top: 3px solid transparent;
+  /* height: 100%; */
+}
+.shipment-list:hover {
+  overflow-y: scroll;
+  border-bottom: 3px solid #afb1b683;
+  border-top: 3px solid #afb1b683;
+}
+.shipment-list::-webkit-scrollbar{
+  width: 12px;
+  background-color: transparent;
+}
+.shipment-list::-webkit-scrollbar-thumb{
+  background-color: #ada9a970;
+  border-radius: 6px;
 }
 .shipment-list li {
   margin: 8px 0;
   border-radius: 10px;
-  height: 30px;
+  height: auto;
+  min-height: 30px;
   line-height: 30px;
+  cursor: pointer;
+}
+.shipment-list li:hover {
+  background: linear-gradient(90deg, rgba(45, 48, 56, 0) 22.92%, #2d30389a 100%)
 }
 .shipment-list li a {
   font-family: "Roboto", sans-serif;
