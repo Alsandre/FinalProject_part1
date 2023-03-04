@@ -1,8 +1,7 @@
 import { populateShipmentList } from "./populate-shipment-list.js";
 import {  boxesInputHandler,  searchInputHandler,  inputCoverHandler,} from "./eventHandlers.js";
-import { $ , SHIPMENTS_LIST , burgerSH , mobileSearch , mobileSearchOut ,} from "./helper.js";
+import { $ , SHIPMENTS_LIST , burgerSH , mobileSearch , mobileSearchOut , selectShipment} from "./helper.js";
 
-let selectedShipmentId;
 let searchField = $("search");
 let shipmentBoxes = $("shipment-boxes");
 let burgerBtn = $("burger-button");
@@ -35,6 +34,5 @@ fetch(
   .then((data) => data.forEach((el) => SHIPMENTS_LIST.push(new Shipment(el))))
   .then(() => {
     populateShipmentList(SHIPMENTS_LIST);
-    let a = $(SHIPMENTS_LIST[0].id);
-    a.focus();
+    selectShipment(SHIPMENTS_LIST[0].id)
   });

@@ -19,24 +19,24 @@ export function populateShipmentList(arr) {
     shipmentA.setAttribute("load", element.boxes ? element.boxes : null);           // not necessary
     shipmentA.innerText = element.name;
     shipmentA.id = `a_${element.id}`;
-    shipmentA.addEventListener(                                                     // not necessary if handled otherwise
-      "focus",
-      () =>
-        (shipmentLi.style.background =
-          "linear-gradient(90deg, rgba(45, 48, 56, 0) 22.92%, #2D3038 100%)")
-    );
-    shipmentA.addEventListener("blur", () => {                                         // not necessary if handled otherwise
-      shipmentLi.style.background = "#5F6472";
-      // target.value = ''
-    });
+    // shipmentA.addEventListener(                                                     // not necessary if handled otherwise
+    //   "focus",
+    //   () =>
+    //     (shipmentLi.style.background =
+    //       "linear-gradient(90deg, rgba(45, 48, 56, 0) 22.92%, #2D3038 100%)")
+    // );
+    // shipmentA.addEventListener("blur", () => {                                         // not necessary if handled otherwise
+    //   shipmentLi.style.background = "#5F6472";
+    //   // target.value = ''
+    // });
 
-    shipmentLi.addEventListener("focus", () =>                                         // not necessary if handled otherwise
-      shipmentFocusHandler(shipmentLi, target)
-    );
-    shipmentLi.addEventListener("blur", () => {                                         // not necessary if handled otherwise
-      shipmentLi.style.background = "#5F6472";
-      // target.value = ''
-    });
+    // shipmentLi.addEventListener("focus", () =>                                         // not necessary if handled otherwise
+    //   shipmentFocusHandler(shipmentLi, target)
+    // );
+    // shipmentLi.addEventListener("blur", () => {                                         // not necessary if handled otherwise
+    //   shipmentLi.style.background = "#5F6472";
+    //   // target.value = ''
+    // });
     shipmentLi.addEventListener("click", (e) => {                                         // not necessary if handled otherwise
       shipmentItemClickHandler(e)
     });

@@ -1,8 +1,12 @@
-import { cargoBayCalculator, $, SHIPMENTS_LIST, selectShipment } from "./helper.js";
+import { cargoBayCalculator, $, SHIPMENTS_LIST, selectShipment, swap} from "./helper.js";
 
 let cargoBays = $("shipment-bays");
 
 export function shipmentItemClickHandler (event) {
+  let isMobile = window.screen.width < 481;
+  if(isMobile && $('information-of-shipment').style.display === 'none'){
+    swap("burger-cross", "burger-lines")
+  }
   selectShipment(event.currentTarget.id)
 }
 
@@ -40,9 +44,9 @@ export const searchInputHandler = (e) => {
     });
     selectShipment(searchResult[0].id);
   }
-  console.log(searchResult);
-  console.log(e.key);
-  console.log(e.target.value);
+  // console.log(searchResult);
+  // console.log(e.key);
+  // console.log(e.target.value);
 };
 
 export const boxesInputHandler = (e) =>
