@@ -2,6 +2,10 @@ import { cargoBayCalculator, $, SHIPMENTS_LIST, selectShipment } from "./helper.
 
 let cargoBays = $("shipment-bays");
 
+export function shipmentItemClickHandler (event) {
+  selectShipment(event.currentTarget.id)
+}
+
 export function shipmentFocusHandler(element, target) {
   let shipmentHeader = $("shipment-header");
   let shipmentContact = $("shipment-contact");

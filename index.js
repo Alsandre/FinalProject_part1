@@ -2,6 +2,7 @@ import { populateShipmentList } from "./populate-shipment-list.js";
 import {  boxesInputHandler,  searchInputHandler,  inputCoverHandler,} from "./eventHandlers.js";
 import { $ , SHIPMENTS_LIST , burgerSH , mobileSearch , mobileSearchOut ,} from "./helper.js";
 
+let selectedShipmentId;
 let searchField = $("search");
 let shipmentBoxes = $("shipment-boxes");
 let burgerBtn = $("burger-button");
