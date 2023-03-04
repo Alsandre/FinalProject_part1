@@ -7,7 +7,7 @@ let shipmentBoxes = $("shipment-boxes");
 let burgerBtn = $("burger-button");
 let inputCover = $("input-cover");
 
-searchField.oninput = searchInputHandler;
+searchField.onkeydown = searchInputHandler;
 
 searchField.onfocus = mobileSearch;
 searchField.onblur = mobileSearchOut;

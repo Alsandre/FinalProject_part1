@@ -1,4 +1,4 @@
-import { cargoBayCalculator, $ } from "./helper.js";
+import { cargoBayCalculator, $, SHIPMENTS_LIST, selectShipment } from "./helper.js";
 
 let cargoBays = $("shipment-bays");
 
@@ -24,25 +24,21 @@ export function shipmentFocusHandler(element, target) {
     : (cargoBays.innerText = "-");
 }
 
-export function selectShipment(id) {
-  let selection = SHIPMENTS_LIST.filter((el) => el.id === id);
-  let headerNode = $("shipment-header");
-  let contactNode = $("shipment-contact");
-  let boxesNode = $("shipment-boxes");
-  let cargoNode = $("shipment-bays");
 
-  if (selection.length > 1) {
-    alert("More then one result to show!");
-  } else {
-  }
-}
 
 export const searchInputHandler = (e) => {
-  let searchResult = SHIPMENTS_LIST.filter((el) =>
-    el.name.includes(e.target.value)
-  );
+  let target = $("shipment-boxes");
+  let searchResult;
+  if (e.key === "Enter") {
+    searchResult = SHIPMENTS_LIST.filter((el) => {
+      let shipmentName = el.name;
+      return shipmentName.toLowerCase().includes(e.target.value);
+    });
+    selectShipment(searchResult[0].id);
+  }
   console.log(searchResult);
-  populateShipmentList(searchResult);
+  console.log(e.key);
+  console.log(e.target.value);
 };
 
 export const boxesInputHandler = (e) =>

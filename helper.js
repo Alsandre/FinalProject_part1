@@ -7,7 +7,7 @@ export function swap(id1, id2) {
   $(id2).style.display = "block";
   if (id1 === "burger-lines") {
     $("list-of-shipments").style.display = "block";
-    $("list-of-shipments").style.marginTop = "80px";
+    // $("list-of-shipments").style.marginTop = "80px";
     $("search-bar").style.display = "none";
     $("information-of-shipment").style.display = "none";
   } else if (id1 === "burger-cross") {
@@ -46,6 +46,19 @@ export const mobileSearchOut = (e) => {
     $("input-cover").style.display = "block";
   }
 };
+
+export function selectShipment(id) {
+  let selection = SHIPMENTS_LIST.find((el) => el.id === id);
+  let headerNode = $("shipment-header");
+  let contactNode = $("shipment-contact");
+  let boxesNode = $("shipment-boxes");
+  let cargoNode = $("shipment-bays");
+
+  headerNode.textContent = selection.name;
+  contactNode.textContent = selection.email;
+  boxesNode.value = selection.boxes;
+  cargoNode.textContent = cargoBayCalculator(selection.boxes);
+}
 
 export function cargoBayCalculator(data) {
   return Math.ceil(data.split(",").reduce((acc, val) => +val + acc, 0) / 10);
